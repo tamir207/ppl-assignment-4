@@ -47,8 +47,9 @@ swap_list([H|T], Result) :-
 % Signature: sub_tree(Subtree, Tree)/2
 % Purpose: Tree contains Subtree.
 
-
-
+sub_tree(T, T) :- T \= void.
+sub_tree(Sub, tree(_, Left, _)) :-sub_tree(Sub, Left).
+sub_tree(Sub, tree(_, _, Right)) :-sub_tree(Sub, Right).
 
 % Signature: swap_tree(Tree, InversedTree)/2
 % Purpose: InversedTree is the �mirror� representation of Tree.
