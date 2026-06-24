@@ -1,3 +1,2 @@
-sub_tree(T, T) :- T \= void.
-sub_tree(Sub, tree(_, Left, _)) :-sub_tree(Sub, Left).
-sub_tree(Sub, tree(_, _, Right)) :-sub_tree(Sub, Right).
+swap_tree(tree(T, void, void), tree(T, void, void)).
+swap_tree(tree(T, L1, R1), tree(T, L2, R2)) :- swap_tree(L1, R2), swap_tree(L2, R1).
